@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NZ Covid Tracker</title>
+    <link rel="stylesheet" type="text/css" href="kpak339.css">
+    <script src="kpak339.js"></script>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/55/Coronavirus_cartoon.svg" type="image/x-icon" />
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1 style="font-size: 3vw;">Unofficial New Zealand COVID-19 Dashboard</h1>
+        </div>  
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Coronavirus_cartoon.svg" style="margin-left: 2%; width:15vw;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Coronavirus_cartoon.svg" style="margin-left: 83%; width:15vw;">
+    </header>
+    
+
+    <!-- Navigation bars -->
+    <div class="navbar">
+        <ul>
+            <li><a class="buttons" href="#" onclick="activeTab('Home'); getCountry();">Home</a></li>
+            <li><a class="buttons" href="#" onclick="activeTab('detailed'); getDaily();">NZ Daily Timeline</a></li>
+            <li><a class="buttons" href="#" onclick="activeTab('GlobalStats'); getGlobal()">Global Stats</a></li>
+        </ul>
+    </div>
+    
+    <!-- Page containers -->
+
+    <!-- HOME -->
+    
+    <div class="background">
+        <div class="content" id="Home" style="display:block">
+            <h1 style='padding: 15px; font-size:6vh;'>National Alert Level: 2</h1>
+            <h style='padding: 15px; font-size:5vh;'>Live statistics for New Zealand COVID cases</h>
+            <div style="margin-left: 150px; margin-right: 150px;">
+                
+                <div class="grid" id="nzStats">
+                    
+                </div>
+                    <!-- Total Cases -->
+                    <div> 
+                    <br>
+                    <h style='padding: 15px; font-size:5vh;'>Total Cases</h>
+                    <svg class ='card3' viewBox='0 0 900 500' id='nzGraph' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+
+                    </svg>
+                    <!-- <div id='totalPoint'></div> -->
+                    
+                    <svg class ='card3' viewBox='0 0 900 500' id='nzGraphAll' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+
+                    </svg>
+                                        
+                    <!-- Active Cases -->
+                    <div>
+                        <br>
+                        <h style='padding: 15px; font-size:5vh;'>Total Active Cases</h>
+                        <svg class ='card3' viewBox='0 0 900 500' id='nzGraphActive' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+    
+                        </svg>
+                        <svg class ='card3' viewBox='0 0 900 500' id='nzGraphAllActive' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+    
+                        </svg>
+                    </div>
+
+                    <!-- Recovered Cases -->
+                    <div>
+                        <br>
+                        <h style='padding: 15px; font-size:5vh;'>Total Recovered Cases</h>
+                        <svg class ='card3' viewBox='0 0 900 500' id='nzGraphRecovered' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+    
+                        </svg>
+                        <svg class ='card3' viewBox='0 0 900 500' id='nzGraphAllRecovered' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+    
+                        </svg>
+                    </div>
+
+                    <!-- Death Cases -->
+                    <div>
+                        <br>
+                        <h style='padding: 15px; font-size:5vh;'>Total Deaths</h>
+                        <svg class ='card3' viewBox='0 0 900 500' id='nzGraphDeaths' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+    
+                        </svg>
+                        <svg class ='card3' viewBox='0 0 900 500' id='nzGraphAllDeaths' height='100%' xmlns='http://www.w3.org/2000/svg' overflow='visible'>
+    
+                        </svg>
+                    </div>
+
+                </div>
+
+                
+                    
+                
+                    
+            <footer>
+                Data Source: <br> www.covid19api.com
+            </footer>
+        </div>
+    </div>
+
+    <!-- Detailed NZ Timeline section -->
+    <div class="content" id="detailed" style="display:none">
+        <h1 style='padding: 15px; font-size:6vh;'>NZ Daily Case Breakdown</h1>
+        <h style='padding: 15px; font-size:5vh;'>Here you will find a detailed breakdown of each day</h>
+        
+        <br><br>
+        <div id="dStats" class="grid">
+             
+        </div>
+    </div>
+
+    <!-- Global Stats Section -->
+    <div class="content" id="GlobalStats" style="display:none">
+        <div id='globalDate'>
+            
+        </div>
+        <div id="gStats" class="grid">
+            
+        </div>
+
+        
+
+        
+    </div>
+    </div>
+
+</div>
+
+
+   
+
+</body>
+</html>

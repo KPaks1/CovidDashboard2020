@@ -1,0 +1,30 @@
+Kaine Paki // kpak339 // 160 537 853 
+
+Unofficial New Zealand COVID-19 Dashboard Summary:
+
+The api I used was from https://covid19api.com/. I used all avialable statistics dating back to
+Feb 2020. The information I chose to use were: Confirmed cases, Active cases, Recovered cases & Cases resulting in deaths for
+both NZ stats and global stats - my main focus was on NZ stats.
+
+On the homepage I displayed the National Alert Level at the top of the screen, at the time of creating this we were in level 2
+(Couldn't find an API for this). I then displayed the most recent updated overall stats for NZ, showing the change over the past 24 hours as well.
+I used little icons for the reader/viewer to better understand the data & included the date of the update.
+
+The next section below shows the today's statistics. This is the change in data in the past 24 hours, so 
+todays totals minus yesterdays totals. This is important so that I could portray today's new cases, recoveries,
+deaths etc as well as the overall totals above.
+
+Below this section I displayed a line graph of the most recent 30 days data for all catagories, as well as 
+an overall graph for each catagory. These graphs are all scalable with the browser & are created in svg format using
+percentages of my divs. I was going to incorperate these graphs in one div and use buttons to select what stats you wished
+to view, however, I believe that most people looking at this will want to know all the stats, so I chose to have them
+readily avialable simultaneously.
+
+The section logical section 'NZ Daily Timeline' is simply a more detailed breakdown of each day from the most
+recent date to the first recorded date. I was thinking about implementing a search bar to search the dates too.
+
+I also included a 'Global Stats' section displaying the most recent statistics available with this particular api.
+I didn't spend much time on this as our focus is on NZ and simply included it for completeness.
+
+Overall my design is easy to use and doesn't feel very sterile with my choice of colours and use of the given
+covid SVG.
