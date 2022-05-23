@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-kpak339",
+      "appliesTo": "Covid/kpak339.html",
+      "type": "launch"
+    }
+  ]
+}

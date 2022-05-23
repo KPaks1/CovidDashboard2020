@@ -367,7 +367,7 @@ function drawNZ(data){
     for (k=1; k<=xint;k+=1){
         // Drawing y-axis
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + yTextInt + "</text>";
             yTextInt -= Math.round(Axis/yint);
             y += (70/yint);
@@ -418,16 +418,15 @@ function drawBig(data){
     entries += "<text text-achor='middle' dominant-baseline='middle' font-size='10px' x='0%' y='92%'> Year </text>";
     // X-axis Line
     entries += "<line x1='5%' y1='80%' x2='95%' y2='80%' stroke='black' stroke-width='2'/>";
-    var k, y, x, cy,  yint, previousMonth;
+    var k, y, x, cy, yint;
     y = 10;
     x = 95;
     
     yint = 20;
     yTextInt = (Max);
-    previousMonth = data[data.length-1].Date.slice(5,10);
     for (k=1; k<=xint;k+=1){
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             if (yTextInt<=0){
                 entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + 0 + "</text>";
             }else{
@@ -440,11 +439,9 @@ function drawBig(data){
         if ((k%14==0)){
             
             entries += "<line x1='"+ x + "%' y1='80%' x2='"+ x + "%' y2='82%' stroke='black' stroke-width='2'/>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='84%'>" + data[data.length-k].Date.slice(8,10) + "</text>";
-            if (data[data.length-k].Date.slice(5,10) != previousMonth){
-                entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='88%'>" + data[data.length-k].Date.slice(5,7) + "</text>";
-                previousMonth = data[data.length-k].Date.slice(5,10);
-            }
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='84%'>" + data[data.length-k].Date.slice(8,10) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) + "%' y='88%'>" + data[data.length - k].Date.slice(5, 7) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) + "%' y='92%'>" + data[data.length - k].Date.slice(2, 4) + "</text>";
         } 
         
         cy = 80 - ((((data[data.length-k].Confirmed-Min)/Axis)*70));
@@ -492,7 +489,7 @@ function drawNZActive(data){
 
     for (k=1; k<=xint;k+=1){
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + yTextInt + "</text>";
             yTextInt -= Math.round(Axis/yint);
             
@@ -552,7 +549,7 @@ function drawBigActive(data){
 
     for (k=1; k<=xint;k+=1){
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             if (yTextInt<=0){
                 entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + 0 + "</text>";
             }else{
@@ -564,9 +561,9 @@ function drawBigActive(data){
         }
         if ((k%14==0)){
             entries += "<line x1='"+ x + "%' y1='80%' x2='"+ x + "%' y2='82%' stroke='black' stroke-width='2'/>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='84%'>" + data[data.length-k].Date.slice(5,7) + "</text>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='88%'>" + data[data.length-k].Date.slice(8,10) + "</text>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='92%'>" + data[data.length-k].Date.slice(2,4) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='84%'>" + data[data.length-k].Date.slice(5,7) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='88%'>" + data[data.length-k].Date.slice(8,10) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='92%'>" + data[data.length-k].Date.slice(2,4) + "</text>";
         } 
         
         cy = 80 - ((((data[data.length-k].Active-Min)/Axis)*70));
@@ -615,7 +612,7 @@ function drawNZRecovered(data){
 
     for (k=1; k<=xint;k+=1){
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + yTextInt + "</text>";
             yTextInt -= Math.round(Axis/yint);
             
@@ -675,7 +672,7 @@ function drawBigRecovered(data){
 
     for (k=1; k<=xint;k+=1){
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             if (yTextInt<=0){
                 entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + 0 + "</text>";
             }else{
@@ -687,9 +684,9 @@ function drawBigRecovered(data){
         }
         if ((k%14==0)){
             entries += "<line x1='"+ x + "%' y1='80%' x2='"+ x + "%' y2='82%' stroke='black' stroke-width='2'/>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='84%'>" + data[data.length-k].Date.slice(8,10) + "</text>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='88%'>" + data[data.length-k].Date.slice(5,7) + "</text>";
-            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='"+ (x-1.5) +"%' y='92%'>" + data[data.length-k].Date.slice(2,4) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='84%'>" + data[data.length-k].Date.slice(8,10) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='88%'>" + data[data.length-k].Date.slice(5,7) + "</text>";
+            entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='" + (x - 0.75) +"%' y='92%'>" + data[data.length-k].Date.slice(2,4) + "</text>";
         } 
         
         cy = 80 - ((((data[data.length-k].Recovered-Min)/Axis)*70));
@@ -738,7 +735,7 @@ function drawNZDeaths(data){
 
     for (k=1; k<=xint;k+=1){
         if (k<=yint+1){
-            entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
             entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + yTextInt + "</text>";
             yTextInt -= Math.round(Axis/yint);
             
@@ -800,15 +797,15 @@ function drawBigDeaths(data){
         if (k<=yint+1){
             
             if (yTextInt<=0){
-                entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+                entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
                 entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + 0 + "</text>";
-            }else if (yTextInt % 100 == 0){
-                entries += "<line x1='3%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
+            }else if (!(yTextInt % 50)){
+                entries += "<line x1='4.5%' y1='"+ y +"%' x2='5%' y2='"+ y +"%' stroke='black' stroke-width='2'/>";
                 entries += "<text text-achor='middle' dominant-baseline='middle' font-size='11px' x='0%' y='"+ y +"%'>" + yTextInt + "</text>";
             }
             yTextInt -= Math.round(Axis/yint);
             
-            y += (70/yint);
+            y += (80/yint);
         }
         if ((k%14==0)){
             entries += "<line x1='"+ x + "%' y1='80%' x2='"+ x + "%' y2='82%' stroke='black' stroke-width='2'/>";
